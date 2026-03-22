@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purge Your Gmail Inbox — InboxPurge Alternative | $10/yr</title>
+  <meta name="description" content="The best InboxPurge alternative. Bulk delete Gmail emails by sender, free up Google storage, and clean your inbox in minutes. $10/yr — 5x cheaper than InboxPurge." />
+  <meta name="keywords" content="purge gmail inbox, inboxpurge alternative, bulk delete gmail by sender, gmail inbox cleanup, purge inbox gmail" />
+  <link rel="canonical" href="https://purgeinbox.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Purge Your Gmail Inbox — $10/yr" />
+  <meta property="og:description" content="Bulk delete Gmail emails by sender. 5x cheaper than InboxPurge. Works in any browser." />
+  <meta property="og:url" content="https://purgeinbox.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Gmailytics",
+    "applicationCategory": "ProductivityApplication",
+    "offers": { "@type": "Offer", "price": "10", "priceCurrency": "USD", "description": "$10/year" },
+    "description": "Bulk delete Gmail emails by sender. See who fills your inbox and clean up thousands of emails in one click.",
+    "operatingSystem": "Web",
+    "url": "https://gmailytics.com"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #667eea;
+      --purple-dark: #764ba2;
+      --text: #1e293b;
+      --muted: #64748b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --green: #22c55e;
+      --red: #ef4444;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: #fff;
+    }
+
+    a { color: var(--purple); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+    .nav-cta:hover { opacity: 0.9; text-decoration: none; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 72px 24px 56px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #ede9fe;
+      color: var(--purple-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      padding: 15px 36px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.35);
+    }
+
+    .hero-cta:hover { opacity: 0.92; text-decoration: none; transform: translateY(-1px); }
+
+    .hero-note {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    /* ── Price Strip ── */
+    .price-strip {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px;
+    }
+
+    .price-strip-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .price-item {
+      text-align: center;
+    }
+
+    .price-item-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .price-item-value {
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .price-item-value.green { color: var(--green); }
+    .price-item-value.red { color: #94a3b8; text-decoration: line-through; font-size: 1.4rem; }
+
+    .price-item-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .price-divider {
+      font-size: 1.5rem;
+      color: var(--border);
+      font-weight: 300;
+    }
+
+    .price-badge {
+      background: #dcfce7;
+      color: #15803d;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    /* ── How it works ── */
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .step {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .step p { font-size: 0.875rem; color: var(--muted); }
+
+    /* ── Comparison table ── */
+    .compare-section {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px;
+    }
+
+    .compare-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+
+    .compare-table th {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .compare-table th:first-child { text-align: left; color: var(--muted); font-weight: 600; }
+    .compare-table th.highlight { color: var(--purple); }
+
+    .compare-table td {
+      padding: 13px 20px;
+      font-size: 0.875rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+    }
+
+    .compare-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fafafa; }
+
+    .td-highlight { background: rgba(102, 126, 234, 0.04) !important; }
+    .check { color: var(--green); font-size: 1rem; }
+    .cross { color: #cbd5e1; font-size: 1rem; }
+    .price-green { color: var(--green); font-weight: 800; font-size: 1rem; }
+    .price-gray { color: #94a3b8; font-weight: 700; }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      text-align: center;
+      padding: 72px 24px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .final-cta h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    .final-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      padding: 15px 40px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.35);
+    }
+
+    .final-cta a:hover { opacity: 0.92; text-decoration: none; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    footer a { color: var(--purple); }
+
+    @media (max-width: 600px) {
+      .price-strip-inner { gap: 20px; }
+      .price-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="https://gmailytics.com" class="nav-logo">
+      <div class="nav-logo-icon">G</div>
+      Purge Inbox
+    </a>
+    <a href="https://gmailytics.com/dashboard" class="nav-cta">Try Free →</a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">InboxPurge Alternative</div>
+    <h1>Purge your Gmail inbox.<br /><span>5× cheaper.</span></h1>
+    <p>
+      Bulk delete thousands of Gmail emails by sender in one click.
+      See who's filling your inbox, free up Google storage, and clean up in minutes.
+    </p>
+    <a href="https://gmailytics.com/dashboard" class="hero-cta">Purge My Inbox Free →</a>
+    <p class="hero-note">No credit card required &nbsp;·&nbsp; Works in any browser</p>
+  </div>
+
+  <!-- Price Strip -->
+  <div class="price-strip">
+    <div class="price-strip-inner">
+      <div class="price-item">
+        <div class="price-item-label">Gmailytics</div>
+        <div class="price-item-value green">$10<span style="font-size:1rem;font-weight:600">/yr</span></div>
+        <div class="price-badge">Best value</div>
+      </div>
+      <div class="price-divider">vs</div>
+      <div class="price-item">
+        <div class="price-item-label">InboxPurge</div>
+        <div class="price-item-value red">$48/yr</div>
+        <div class="price-item-sub">Or $7/month</div>
+      </div>
+      <div class="price-divider">vs</div>
+      <div class="price-item">
+        <div class="price-item-label">Clean Email</div>
+        <div class="price-item-value red">$30/yr</div>
+        <div class="price-item-sub">Or $9/month</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="section">
+    <h2 class="section-title">How it works</h2>
+    <p class="section-sub">Three steps to a clean inbox</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Connect Gmail</h3>
+        <p>Sign in with Google. We only access email metadata — sender, date, size. Never your email content.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>See Top Senders</h3>
+        <p>Instantly see who emails you most, how much storage they're using, and your inbox breakdown.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Bulk Delete by Sender</h3>
+        <p>Select senders and trash or archive all their emails at once. Clean up thousands of emails in seconds.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="compare-section">
+    <div class="compare-inner">
+      <h2 class="section-title" style="margin-bottom:10px">Gmailytics vs InboxPurge</h2>
+      <p class="section-sub">Why switch from InboxPurge</p>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="highlight">Gmailytics</th>
+            <th>InboxPurge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price</td>
+            <td class="td-highlight price-green">$10/yr</td>
+            <td class="price-gray">$48/yr</td>
+          </tr>
+          <tr>
+            <td>Free tier</td>
+            <td class="td-highlight"><span class="check">✓</span> Fully free</td>
+            <td>20 credits/month only</td>
+          </tr>
+          <tr>
+            <td>Bulk delete by sender</td>
+            <td class="td-highlight"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Works in any browser</td>
+            <td class="td-highlight"><span class="check">✓</span> Web app</td>
+            <td><span class="cross">✗</span> Chrome only</td>
+          </tr>
+          <tr>
+            <td>Sender analytics dashboard</td>
+            <td class="td-highlight"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Storage usage by sender</td>
+            <td class="td-highlight"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Sells your data</td>
+            <td class="td-highlight"><span class="check">✓</span> Never</td>
+            <td><span class="check">✓</span> Never</td>
+          </tr>
+          <tr>
+            <td>Gmail only</td>
+            <td class="td-highlight"><span class="check">✓</span> Gmail-native</td>
+            <td><span class="check">✓</span> Gmail-native</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="text-align:center;margin-top:16px;font-size:0.8rem;color:#94a3b8;">
+        Full comparison: <a href="https://gmailytics.com/compare">gmailytics.com/compare</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="final-cta">
+    <h2>Ready to purge your inbox?</h2>
+    <p>Connect Gmail and see who's filling your inbox in seconds. Free to start.</p>
+    <a href="https://gmailytics.com/dashboard">Purge My Inbox →</a>
+    <p style="margin-top:14px;font-size:0.78rem;color:#94a3b8;">
+      No credit card &nbsp;·&nbsp; No Chrome extension required &nbsp;·&nbsp; Any browser
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Powered by <a href="https://gmailytics.com">Gmailytics</a>
+      &nbsp;·&nbsp;
+      <a href="https://gmailytics.com/privacy">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="https://gmailytics.com/compare">Full Comparison</a>
+    </p>
+    <p style="margin-top:8px;">
+      Gmailytics is not affiliated with Google LLC or Gmail.
+    </p>
+  </footer>
+
+</body>
+</html>
